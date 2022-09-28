@@ -38,6 +38,7 @@ def showStatus():
         print(f"You can also attempt to solve the {crayons.green(rooms[currentRoom]['riddle'])} while you are here!")
     print(f'{crayons.blue("---------------------------")}')
 
+
 # function to play the riddle
 def playMonsterRiddle():
     # inventory needs to be updated in this function, so making inventory global
@@ -66,7 +67,8 @@ def playMonsterRiddle():
     attempts = 0
     # loops until 2 attempts unless player guessed it correct the first time
     while attempts < 2:
-        print(f"Solve the following riddle to keep going. You have 2 attempts to get it right. {crayons.cyan(question)}")
+        print(
+            f"Solve the following riddle to keep going. You have 2 attempts to get it right. {crayons.cyan(question)}")
         user_ans = input()
         # normalize user input
         user_ans = user_ans.lower().strip()
@@ -82,6 +84,7 @@ def playMonsterRiddle():
             break
         else:
             print(f"{crayons.red('Try again!')}")
+
 
 # an inventory, which is initially empty
 inventory = []
@@ -219,5 +222,6 @@ while True:
             print(f"{crayons.yellow('''Phew...you survived the monster. What's your next move?''')}")
             continue
         else:
-            print(f'''{crayons.red("You did not gather enough items to defeat the monster, it has got you... GAME OVER!", bold = True)}''')
+            print(
+                f'''{crayons.red("You did not gather enough items to defeat the monster, it has got you... GAME OVER!", bold=True)}''')
         break
